@@ -21,6 +21,7 @@ struct Country: Codable {
     var rate: Int
     var pictureName: String
     var coordinates: Coordinates
+    
 }
 
 // Représente les coordonnées d'une capitale
