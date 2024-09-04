@@ -7,6 +7,8 @@
 
 import UIKit
 import MapKit
+//yl
+import SwiftUI
 
 class DetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var countryNameLabel: UILabel!
@@ -16,7 +18,9 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var embedMapView: UIView!
-    @IBOutlet weak var titleView: UIView!
+    //yl
+    //déconnection l'Outlet dans le storyboard
+    //@IBOutlet weak var titleView: UIView!
     @IBOutlet weak var rateView: UIView!
     
     var country: Country?
@@ -29,17 +33,19 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         if let country = self.country {
             self.setUpData(country: country)
         }
+        
+        self.addSwiftUITitleView()
     }
     
     private func setUpData(country: Country) {
         self.title = country.name
         
-        self.countryNameLabel.text = country.name
-        self.capitalNameLabel.text = country.capital
+//        self.countryNameLabel.text = country.name
+//        self.capitalNameLabel.text = country.capital
         self.imageView.image = UIImage(named: country.pictureName )
         self.descriptionTextView.text = country.description
         
-        self.setRateStars(rate: country.rate)
+        //self.setRateStars(rate: country.rate)
         self.setMapLocation(lat: self.country?.coordinates.latitude ?? 28.394857,
                             long: self.country?.coordinates.longitude ?? 84.124008)
     }
@@ -61,19 +67,38 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         self.mapView.delegate = self
     }
     
-    private func setRateStars(rate: Int) {
-        var lastRightAnchor = self.rateView.rightAnchor
-        for _ in 0..<rate {
-            let starView = UIImageView(image: UIImage(systemName: "star.fill"))
-            self.rateView.addSubview(starView)
-            
-            starView.translatesAutoresizingMaskIntoConstraints = false
-            starView.widthAnchor.constraint(equalToConstant: 19).isActive = true
-            starView.heightAnchor.constraint(equalToConstant: 19).isActive = true
-            starView.centerYAnchor.constraint(equalTo: self.rateView.centerYAnchor).isActive = true
-            starView.rightAnchor.constraint(equalTo: lastRightAnchor).isActive = true
-            lastRightAnchor = starView.leftAnchor
-        }
+//    private func setRateStars(rate: Int) {
+//        var lastRightAnchor = self.rateView.rightAnchor
+//        for _ in 0..<rate {
+//            let starView = UIImageView(image: UIImage(systemName: "star.fill"))
+//            self.rateView.addSubview(starView)
+//            
+//            starView.translatesAutoresizingMaskIntoConstraints = false
+//            starView.widthAnchor.constraint(equalToConstant: 19).isActive = true
+//            starView.heightAnchor.constraint(equalToConstant: 19).isActive = true
+//            starView.centerYAnchor.constraint(equalTo: self.rateView.centerYAnchor).isActive = true
+//            starView.rightAnchor.constraint(equalTo: lastRightAnchor).isActive = true
+//            lastRightAnchor = starView.leftAnchor
+//        }
+//    }
+    
+    //yl
+    private func addSwiftUITitleView() {
+        let titleSwiftUIView = TitleViewSwiftUI(country: country!)
+        let hostingController = UIHostingController(rootView: titleSwiftUIView)
+        
+        self.addChild(hostingController)
+        self.view.addSubview(hostingController.view)
+        
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            hostingController.view.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 0),
+            hostingController.view.bottomAnchor.constraint(lessThanOrEqualTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+        ])
+        
+        hostingController.didMove(toParent: self)
     }
     
     // Cette fonction est appelée lorsque la carte est cliquée
