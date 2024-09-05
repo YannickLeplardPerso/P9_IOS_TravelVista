@@ -18,8 +18,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var embedMapView: UIView!
-    //yl
-    //déconnection l'Outlet dans le storyboard
+    //yl déconnection l'Outlet dans le storyboard
     //@IBOutlet weak var titleView: UIView!
     @IBOutlet weak var rateView: UIView!
     
@@ -33,7 +32,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         if let country = self.country {
             self.setUpData(country: country)
         }
-        
+        //yl
         self.addSwiftUITitleView()
     }
     
@@ -45,7 +44,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         self.imageView.image = UIImage(named: country.pictureName )
         self.descriptionTextView.text = country.description
         
-        //self.setRateStars(rate: country.rate)
+//        self.setRateStars(rate: country.rate)
         self.setMapLocation(lat: self.country?.coordinates.latitude ?? 28.394857,
                             long: self.country?.coordinates.longitude ?? 84.124008)
     }
@@ -84,7 +83,10 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     
     //yl
     private func addSwiftUITitleView() {
-        let titleSwiftUIView = TitleViewSwiftUI(country: country!)
+        guard let country = self.country else {
+            fatalError("addSwiftUITitleView : country is nil")
+        }
+        let titleSwiftUIView = TitleViewSwiftUI(country: country)
         let hostingController = UIHostingController(rootView: titleSwiftUIView)
         
         self.addChild(hostingController)

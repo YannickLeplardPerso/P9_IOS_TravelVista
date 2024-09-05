@@ -19,6 +19,7 @@
 		42B90C1C2B2A056000779364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B90C1B2B2A056000779364 /* Assets.xcassets */; };
 		42B90C1F2B2A056000779364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B90C1D2B2A056000779364 /* LaunchScreen.storyboard */; };
 		ACAC6C552C8850B600D6BAF8 /* CountryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC6C542C8850B600D6BAF8 /* CountryRowView.swift */; };
+		ACAC6C572C88881100D6BAF8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC6C562C88881100D6BAF8 /* DetailView.swift */; };
 		ACB41B502C8606C100B220E6 /* TitleViewSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB41B4F2C8606C100B220E6 /* TitleViewSwiftUI.swift */; };
 		ACB41B522C8609E000B220E6 /* CountryRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB41B512C8609E000B220E6 /* CountryRatingView.swift */; };
 		ACBEE7A12C883E6A00417386 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBEE7A02C883E6A00417386 /* ListView.swift */; };
@@ -39,6 +40,7 @@
 		42B90C1E2B2A056000779364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42B90C202B2A056000779364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACAC6C542C8850B600D6BAF8 /* CountryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowView.swift; sourceTree = "<group>"; };
+		ACAC6C562C88881100D6BAF8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		ACB41B4F2C8606C100B220E6 /* TitleViewSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewSwiftUI.swift; sourceTree = "<group>"; };
 		ACB41B512C8609E000B220E6 /* CountryRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRatingView.swift; sourceTree = "<group>"; };
 		ACBEE7A02C883E6A00417386 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				ACB41B4F2C8606C100B220E6 /* TitleViewSwiftUI.swift */,
 				ACAC6C542C8850B600D6BAF8 /* CountryRowView.swift */,
 				ACBEE7A02C883E6A00417386 /* ListView.swift */,
+				ACAC6C562C88881100D6BAF8 /* DetailView.swift */,
 			);
 			path = SwiftViews;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				424C31C42B30A72300279238 /* Model.swift in Sources */,
+				ACAC6C572C88881100D6BAF8 /* DetailView.swift in Sources */,
 				ACB41B502C8606C100B220E6 /* TitleViewSwiftUI.swift in Sources */,
 				ACBEE7A12C883E6A00417386 /* ListView.swift in Sources */,
 				424C31C82B30A78B00279238 /* Service.swift in Sources */,
@@ -351,7 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "3 en cours";
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 6FH7WNJPHQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelVista/Info.plist;
@@ -382,7 +386,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "3 en cours";
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 6FH7WNJPHQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelVista/Info.plist;
