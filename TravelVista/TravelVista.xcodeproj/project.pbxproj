@@ -18,6 +18,7 @@
 		42B90C1A2B2A055B00779364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B90C182B2A055B00779364 /* Main.storyboard */; };
 		42B90C1C2B2A056000779364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B90C1B2B2A056000779364 /* Assets.xcassets */; };
 		42B90C1F2B2A056000779364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B90C1D2B2A056000779364 /* LaunchScreen.storyboard */; };
+		AC8A340E2C8A1E0D00A6185C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8A340D2C8A1E0D00A6185C /* ListViewModel.swift */; };
 		ACAC6C552C8850B600D6BAF8 /* CountryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC6C542C8850B600D6BAF8 /* CountryRowView.swift */; };
 		ACAC6C572C88881100D6BAF8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC6C562C88881100D6BAF8 /* DetailView.swift */; };
 		ACB41B502C8606C100B220E6 /* TitleViewSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB41B4F2C8606C100B220E6 /* TitleViewSwiftUI.swift */; };
@@ -39,6 +40,7 @@
 		42B90C1B2B2A056000779364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42B90C1E2B2A056000779364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42B90C202B2A056000779364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC8A340D2C8A1E0D00A6185C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		ACAC6C542C8850B600D6BAF8 /* CountryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowView.swift; sourceTree = "<group>"; };
 		ACAC6C562C88881100D6BAF8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		ACB41B4F2C8606C100B220E6 /* TitleViewSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewSwiftUI.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		42B90C112B2A055B00779364 /* TravelVista */ = {
 			isa = PBXGroup;
 			children = (
+				AC8A340C2C8A1DDA00A6185C /* SwiftViewModels */,
 				ACB41B4E2C8606AB00B220E6 /* SwiftViews */,
 				424C31C92B30ABE600279238 /* Model */,
 				424C31BE2B30956400279238 /* Views */,
@@ -107,6 +110,14 @@
 				42B90C202B2A056000779364 /* Info.plist */,
 			);
 			path = TravelVista;
+			sourceTree = "<group>";
+		};
+		AC8A340C2C8A1DDA00A6185C /* SwiftViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AC8A340D2C8A1E0D00A6185C /* ListViewModel.swift */,
+			);
+			path = SwiftViewModels;
 			sourceTree = "<group>";
 		};
 		ACB41B4E2C8606AB00B220E6 /* SwiftViews */ = {
@@ -202,6 +213,7 @@
 				42B90C172B2A055B00779364 /* ListViewController.swift in Sources */,
 				424C31C02B30A39B00279238 /* MapViewController.swift in Sources */,
 				42B90C132B2A055B00779364 /* AppDelegate.swift in Sources */,
+				AC8A340E2C8A1E0D00A6185C /* ListViewModel.swift in Sources */,
 				ACB41B522C8609E000B220E6 /* CountryRatingView.swift in Sources */,
 				424C31BD2B30955E00279238 /* DetailViewController.swift in Sources */,
 				424C31BB2B30919400279238 /* CustomCell.swift in Sources */,
@@ -355,7 +367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = "5 en cours";
 				DEVELOPMENT_TEAM = 6FH7WNJPHQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelVista/Info.plist;
@@ -386,7 +398,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = "5 en cours";
 				DEVELOPMENT_TEAM = 6FH7WNJPHQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelVista/Info.plist;
